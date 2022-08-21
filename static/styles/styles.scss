@@ -1,0 +1,200 @@
+$bg-color: #fff;
+$bg-color-dark: #181a1b;
+$bg-color-dark-lighter: #2b2b2b;
+$font-color: #212529;
+$font-color-dark: #e8e6e3;
+$font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$primary-color: #4caf50;
+$rem: 10px;
+
+$min-width: 375px;
+$min-height: 100vh;
+$breakpoint-mobile: 690px;
+
+@mixin flex($direction: row, $justify: normal, $align: normal, $gap: 0) {
+ display: flex;
+ flex-direction: $direction;
+ justify-content: $justify;
+ align-items: $align;
+ gap: $gap;
+}
+
+*,
+*:before,
+*:after {
+  // account margin and padding to element's specified size
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  // remove default styles set by browsers
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  // set new default values
+  font-family: $font-stack;
+  color: $font-color-dark;
+  text-align: center;
+  font-weight: 500;
+}
+
+html {
+  background-color: $bg-color-dark;
+  font-size: $rem;
+}
+
+body {
+  min-width: $min-width;
+  min-height: $min-height;
+
+  // layout the page in flex boxes (header placeholder, main, footer)
+  @include flex($direction: column, $gap: 2rem);
+}
+
+.placeholder,
+header {
+  background-color: $primary-color;
+
+  // stretch header to fill complete screen width
+  min-width: 100%;
+  // prevent resizing out of bounds
+  min-height: 6rem;
+  max-height: 6rem;
+
+  // space with self contents
+  padding: 3vh 3vw;
+}
+
+header {
+  position: fixed;
+  @include flex($justify: space-between, $align: center);
+
+  .hamburger {
+    width: 2rem;
+    height: 2rem;
+    display: none;
+    cursor: pointer;
+  }
+
+  .logo a {
+    @include flex($align: center, $gap: 0.7rem);
+
+    .icon {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+}
+
+.nav-top {
+  ul {
+    @include flex($gap: 1.5rem);
+    font-size: 1.5rem;
+
+    li {
+      color: white;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+.hero {
+  flex: 1;
+
+  @include flex($justify: space-between);
+}
+
+aside {
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  flex: 1;
+  @include flex($justify: space-between);
+
+  .vertical-line {
+    background-color: grey;
+    height: 100%;
+    width: 1px;
+  }
+
+  // TODO: replace by a div
+  h2 {
+    flex: 1;
+  }
+}
+
+main {
+  min-height: $min-height;
+  padding-top: 2rem;
+  flex: 4;
+  @include flex($direction: column, $justify: space-between);
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  button {
+    $size: 5rem;
+
+    position: sticky;
+    bottom: 6%;
+    left: 75%;
+
+    cursor: pointer;
+    width: $size;
+    height: $size;
+    border-width: 0;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    background-size: 35%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $primary-color;
+    color: $font-color-dark;
+
+    // center '+'
+    @include flex($direction: column, $justify: center, $align: center);
+  }
+}
+
+footer {
+  background-color: $bg-color-dark-lighter;
+  padding: 1rem;
+
+  p,
+  a {
+  color: $font-color-dark;
+  font-size: 1.1rem;
+  }
+
+  a {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@media only screen and (width < $breakpoint-mobile) {
+  // hide social media links
+  .nav-top ul {
+    display: none;
+  }
+
+  // show hamburger menu
+  header .hamburger {
+    display: block;
+  }
+
+  // hide text in logo
+  .page-title {
+    display: none;
+  }
+
+  // hide sidebars
+  aside > * {
+    display: none;
+  }
+}
