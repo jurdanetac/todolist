@@ -14,14 +14,17 @@
   font-weight: 500;
 }
 
-html {
-  background-color: #181a1b;
-  font-size: 10px;
+/* The apparent font-size of :root is 16px, but lets say we want to change it
+to 10px. All we need to do is multiply 16 by some value to get 10.*/
+:root {
+  font-size: 62.5%;
 }
 
 body {
+  font-size: 1.6rem;
   min-width: 375px;
   min-height: 100vh;
+  background-color: #181a1b;
   display: flex;
   flex-direction: column;
   justify-content: normal;
