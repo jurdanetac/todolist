@@ -76,6 +76,8 @@ header {
   }
 
   .logo a {
+    font-size: 1rem;
+
     @include flex($align: center, $gap: 0.7rem);
 
     .icon {
@@ -136,11 +138,11 @@ main {
   }
 
   button {
-    $size: 5rem;
+    $size: 6rem;
 
     position: sticky;
-    bottom: 6%;
-    left: 75%;
+    bottom: 12vh;
+    left: 68vw;
 
     cursor: pointer;
     width: $size;

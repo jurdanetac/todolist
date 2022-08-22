@@ -54,6 +54,7 @@ header .hamburger {
   cursor: pointer;
 }
 header .logo a {
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: normal;
@@ -123,11 +124,11 @@ main p {
 }
 main button {
   position: sticky;
-  bottom: 6%;
-  left: 75%;
+  bottom: 12vh;
+  left: 68vw;
   cursor: pointer;
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   border-width: 0;
   border-radius: 50%;
   font-size: 2.5rem;
