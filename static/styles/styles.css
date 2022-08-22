@@ -166,7 +166,7 @@ footer a {
   .page-title {
     display: none;
   }
-  aside > * {
+  aside {
     display: none;
   }
 }
