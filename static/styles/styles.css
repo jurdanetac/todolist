@@ -22,8 +22,7 @@ to 10px. All we need to do is multiply 16 by some value to get 10.*/
 
 body {
   font-size: 1.6rem;
-  min-width: 375px;
-  min-height: 100vh;
+  min-width: 37.5rem;
   background-color: #181a1b;
   display: flex;
   flex-direction: column;
@@ -35,9 +34,8 @@ body {
 .placeholder,
 header {
   background-color: #4caf50;
-  min-width: 100%;
-  min-height: 6rem;
-  max-height: 6rem;
+  width: 100%;
+  height: 6rem;
   padding: 3vh 3vw;
 }
 
@@ -111,7 +109,7 @@ aside h2 {
 
 main {
   min-height: 100vh;
-  padding-top: 2rem;
+  margin-top: 2rem;
   flex: 4;
   display: flex;
   flex-direction: column;
@@ -158,7 +156,7 @@ footer a {
   font-family: "JetBrains Mono", monospace;
 }
 
-@media only screen and (width < 690px) {
+@media only screen and (width < 44rem) {
   .nav-top ul {
     display: none;
   }
