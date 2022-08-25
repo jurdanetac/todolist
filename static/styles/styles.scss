@@ -75,7 +75,7 @@ header {
     cursor: pointer;
   }
 
-  .logo a {
+  .logo {
     font-size: 1rem;
 
     @include flex($align: center, $gap: 0.7rem);
@@ -85,10 +85,8 @@ header {
       width: 2rem;
     }
   }
-}
 
-.nav-top {
-  ul {
+  .socialMedia {
     @include flex($gap: 1.5rem);
     font-size: 1.5rem;
 
@@ -113,7 +111,7 @@ aside {
   flex: 1;
   @include flex($justify: space-between);
 
-  .vertical-line {
+  .verticalLine {
     background-color: grey;
     height: 100%;
     width: 1px;
@@ -132,13 +130,13 @@ main {
   flex: 4;
   @include flex($direction: column, $justify: space-between, $gap: 2rem);
 
-  p {
+  #noItemsAlert {
     margin-top: 2rem;
     font-size: 1.5rem;
     font-weight: 300;
   }
 
-  ul#itemList {
+  #itemList {
     flex: 1;
     @include flex($direction: column, $gap: 10px);
 
@@ -194,9 +192,10 @@ footer {
   p,
   a {
   color: $font-color-dark;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   }
 
+  // username
   a {
     font-family: 'JetBrains Mono', monospace;
   }
@@ -204,18 +203,18 @@ footer {
 
 // mobile breakpoint
 @media only screen and (width < 44rem) {
-  // hide social media links
-  .nav-top ul {
-    display: none;
-  }
-
   // show hamburger menu
   header .hamburger {
     display: block;
   }
 
+  // hide social media links
+  .socialMedia {
+    display: none;
+  }
+
   // hide text in logo
-  .page-title {
+  .pageTitle {
     display: none;
   }
 

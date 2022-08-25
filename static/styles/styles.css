@@ -53,7 +53,7 @@ header .hamburger {
   display: none;
   cursor: pointer;
 }
-header .logo a {
+header .logo {
   font-size: 1rem;
   display: flex;
   flex-direction: row;
@@ -61,12 +61,11 @@ header .logo a {
   align-items: center;
   gap: 0.7rem;
 }
-header .logo a .icon {
+header .logo .icon {
   height: 2rem;
   width: 2rem;
 }
-
-.nav-top ul {
+header .socialMedia {
   display: flex;
   flex-direction: row;
   justify-content: normal;
@@ -74,7 +73,7 @@ header .logo a .icon {
   gap: 1.5rem;
   font-size: 1.5rem;
 }
-.nav-top ul li {
+header .socialMedia li {
   color: white;
   width: 1.5rem;
   height: 1.5rem;
@@ -99,7 +98,7 @@ aside {
   align-items: normal;
   gap: 0;
 }
-aside .vertical-line {
+aside .verticalLine {
   background-color: grey;
   height: 100%;
   width: 1px;
@@ -118,12 +117,12 @@ main {
   align-items: normal;
   gap: 2rem;
 }
-main p {
+main #noItemsAlert {
   margin-top: 2rem;
   font-size: 1.5rem;
   font-weight: 300;
 }
-main ul#itemList {
+main #itemList {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -131,7 +130,7 @@ main ul#itemList {
   align-items: normal;
   gap: 10px;
 }
-main ul#itemList li {
+main #itemList li {
   min-height: 20rem;
   border: 1px solid white;
   flex: 1;
@@ -180,20 +179,20 @@ footer {
 footer p,
 footer a {
   color: #e8e6e3;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 footer a {
   font-family: "JetBrains Mono", monospace;
 }
 
 @media only screen and (width < 44rem) {
-  .nav-top ul {
-    display: none;
-  }
   header .hamburger {
     display: block;
   }
-  .page-title {
+  .socialMedia {
+    display: none;
+  }
+  .pageTitle {
     display: none;
   }
   aside {
