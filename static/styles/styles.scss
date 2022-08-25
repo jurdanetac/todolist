@@ -209,8 +209,10 @@ footer {
   }
 
   // hide social media links
-  .socialMedia {
-    display: none;
+  .navTop {
+    visibility: hidden;
+    width: 2rem;
+    height: 2rem;
   }
 
   // hide text in logo
