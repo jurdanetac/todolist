@@ -127,24 +127,39 @@ aside {
 
 main {
   min-height: 100vh;
-  margin-top: 2rem;
+  padding: 0 1rem;
 
   flex: 4;
-  @include flex($direction: column, $justify: space-between);
+  @include flex($direction: column, $justify: space-between, $gap: 2rem);
 
   p {
+    margin-top: 2rem;
     font-size: 1.5rem;
     font-weight: 300;
   }
 
-  button {
-    $size: 6rem;
+  ul#itemList {
+    flex: 1;
+    @include flex($direction: column, $gap: 10px);
 
-    position: sticky;
-    bottom: 12vh;
-    left: 68vw;
+    // items
+    li {
+      min-height: 20rem;
+      border: 1px solid white;
+      flex: 1;
+    }
+  }
+}
+
+.buttons {
+  @include flex($gap: 2rem);
+  align-self: flex-end;
+
+  & > * {
+    $size: 5rem;
 
     cursor: pointer;
+    align-self: flex-end;
     width: $size;
     height: $size;
     border-width: 0;
@@ -153,11 +168,22 @@ main {
     background-size: 35%;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: $primary-color;
     color: $font-color-dark;
 
     // center '+'
     @include flex($direction: column, $justify: center, $align: center);
+  }
+
+  #addBtn {
+    background-color: $primary-color;
+  }
+
+  #delBtn {
+    background-color: #af4c4c;
+  }
+
+  #clrBtn {
+    background-color: #787878;
   }
 }
 

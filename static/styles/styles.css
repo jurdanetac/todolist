@@ -110,38 +110,67 @@ aside h2 {
 
 main {
   min-height: 100vh;
-  margin-top: 2rem;
+  padding: 0 1rem;
   flex: 4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: normal;
-  gap: 0;
+  gap: 2rem;
 }
 main p {
+  margin-top: 2rem;
   font-size: 1.5rem;
   font-weight: 300;
 }
-main button {
-  position: sticky;
-  bottom: 12vh;
-  left: 68vw;
+main ul#itemList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  gap: 10px;
+}
+main ul#itemList li {
+  min-height: 20rem;
+  border: 1px solid white;
+  flex: 1;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: normal;
+  gap: 2rem;
+  align-self: flex-end;
+}
+.buttons > * {
   cursor: pointer;
-  width: 6rem;
-  height: 6rem;
+  align-self: flex-end;
+  width: 5rem;
+  height: 5rem;
   border-width: 0;
   border-radius: 50%;
   font-size: 2.5rem;
   background-size: 35%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #4caf50;
   color: #e8e6e3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0;
+}
+.buttons #addBtn {
+  background-color: #4caf50;
+}
+.buttons #delBtn {
+  background-color: #af4c4c;
+}
+.buttons #clrBtn {
+  background-color: #787878;
 }
 
 footer {
