@@ -1,6 +1,6 @@
 $primary-color: #4caf50;
 $bg-color: #fff;
-$bg-color-dark: #181a1b;
+$bg-color-dark: #1b1b1b;
 $bg-color-dark-lighter: #2b2b2b;
 $font-color: #212529;
 $font-color-dark: #e8e6e3;
@@ -40,6 +40,8 @@ $font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 to 10px. All we need to do is multiply 16 by some value to get 10.*/
 :root {
   font-size: 62.5%;
+  // dark scrollbar on chrome
+  color-scheme: dark;
 }
 
 body {
@@ -139,13 +141,27 @@ main {
   #itemList {
     flex: 1;
     @include flex($direction: column, $gap: 10px);
+  }
+}
 
-    // items
-    li {
-      min-height: 20rem;
-      border: 1px solid white;
-      flex: 1;
-    }
+.item {
+  .card-text {
+    background-color: black;
+  }
+
+  border: 1px solid grey;
+  height: 10rem;
+
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.150);
+  }
+
+  &.selected {
+    background-color: rgba(34, 255, 0, 0.063);
   }
 }
 

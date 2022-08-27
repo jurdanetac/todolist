@@ -18,12 +18,13 @@
 to 10px. All we need to do is multiply 16 by some value to get 10.*/
 :root {
   font-size: 62.5%;
+  color-scheme: dark;
 }
 
 body {
   font-size: 1.6rem;
   min-width: 37.5rem;
-  background-color: #181a1b;
+  background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
   justify-content: normal;
@@ -130,10 +131,22 @@ main #itemList {
   align-items: normal;
   gap: 10px;
 }
-main #itemList li {
-  min-height: 20rem;
-  border: 1px solid white;
-  flex: 1;
+
+.item {
+  border: 1px solid grey;
+  height: 10rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.item .card-text {
+  background-color: black;
+}
+.item:hover {
+  background-color: rgba(128, 128, 128, 0.15);
+}
+.item.selected {
+  background-color: rgba(34, 255, 0, 0.063);
 }
 
 .buttons {
